@@ -80,9 +80,48 @@ def convertisseur_secondes():
     minutes = reste_secondes // 60
     s = reste_secondes % 60
     print(f"{s} secondes correspondent à {jours} jour(s), {heures} heure(s), {minutes} minute(s), {s} seconde(s)")
-convertisseur_secondes()
+#convertisseur_secondes()
 
+def maximus():
+    a = int(input("Veuillez entrez la valeur de a : "))
+    b = int(input("Veuillez entrez la valeur de b : "))
+    maximus= max(a,b)
+    print(f"Le maximus est {maximus}")
+#maximus()
+
+def maximusprime():
+    a = int(input("Veuillez entrez la valeur de a : "))
+    b = int(input("Veuillez entrez la valeur de b : "))
+    c = int(input("Veuillez entrez la valeur de c : "))
+    if a>b and a>c:
+        maximusprime = a
+    elif b>a and b>c:
+        maximusprime = b
+    else:
+        maximusprime=c
+    print(f"Le maximum est {maximusprime}")
+#maximusprime()
+
+def estpere():
+    p = int(input("Veuillez entrez la valeur de p : "))
+    if p % 2 == 0:
+        print(f" {p} est paire")
+    else:
+        print(f" {p} est impaire")
+estpere()
+
+#j'ai pas compris comment faire sans le modulo 
+
+
+def fullsecondegre():
+    a = int(input("Veuillez entrez la valeur de a : "))
+    b = int(input("Veuillez entrez la valeur de b : "))
+    c = int(input("Veuillez entrez la valeur de c : "))
+      
+        
 
     
+
+
     
 
