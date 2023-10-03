@@ -128,7 +128,7 @@ def estpere():
 # estpere()
 
 # j'ai pas compris comment faire sans le modulo
-
+ 
 
 def fullsecondegre():
     a = int(input("Veuillez entrez la valeur de a : "))
