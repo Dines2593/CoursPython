@@ -1,4 +1,6 @@
 import random
+import turtle
+import tkinter 
 
 class Exo1():
     def tableau_aleatoire(self,n):
@@ -68,13 +70,72 @@ class Exo1():
 class Exo2():
     def affichage_correct(self,n):
         print(n)
-    
+        
+class Exo3():    
     def recherche(self,m,t):
         for i in range(len(t)):
             if t[i:i+len(m)] == m:
                 return i
                 break
         return -1
+
+class Exo4():
+    def maj(self,txt):
+        resultat = ""
+        for char in txt:
+            if 65 <= ord(char) <= 90 or 97 <= ord(char) <= 122:
+                if 97 <= ord(char) <= 122:
+                    char = str.upper(char)
+                resultat += char
+        return resultat
+    
+    def cesar(self,txt,dec):
+        txt = self.maj(txt)
+        texte_chiffre = []
+
+        for char in txt:
+            if 'A' <= char <= 'Z':
+                # Appliquer le chiffrement de César aux majuscules
+                char_chiffre = chr((ord(char) - ord('A') + dec) % 26 + ord('A'))
+            else:
+                # Ne rien faire pour les caractères non alphabétiques
+                char_chiffre = char
+
+            texte_chiffre.append(char_chiffre)
+
+        return ''.join(texte_chiffre)
+    
+class Exo7():
+    def dragon(self,n):
+        if n == 1:
+            return [False]
+        dragon_n_1 = self.dragon(n - 1)  
+        return dragon_n_1 + [False] + [not x for x in reversed(dragon_n_1)]
+        #courbe_dragon = dragon(n)
+        #print(courbe_dragon)
+    
+    
+    def afficheDragon(self,n):
+        # Récupérer la courbe du dragon d'ordre n
+        courbe_dragon = self.dragon(n)
+        
+        # Configurer la tortue
+        #turtle.speed(2)  # Vitesse de dessin
+        #turtle.penup()   # Lever le stylo pour se déplacer sans dessiner
+        #turtle.goto(-200, 0)  # Position initiale
+        
+        # Dessiner la courbe du dragon
+        for virage_a_gauche in courbe_dragon:
+            if virage_a_gauche:
+                turtle.left(90)
+            else:
+                turtle.right(90)
+            turtle.forward(10)
+        
+        # Afficher la fenêtre graphique
+        turtle.done()
+        turtle.Terminator()
+
 
 
         
@@ -93,8 +154,21 @@ def main():
     #print(l1,l2)
     exo2=Exo2()
     #exo2.affichage_correct(str(int("3"+"4")))
-    v=exo2.recherche("bra","acadbraabra")
-    print(v)
+    exo3=Exo3()
+    #v=exo3.recherche("bra","acadbraabra")
+    #print(v)
+    exo4=Exo4()
+    #v=exo4.maj("bonjourejbdfjkez")
+    #print(v)
+    #v=exo4.cesar("BONJOUrzORG ",2)
+    #print(v)
+    exo7=Exo7()
+    #v=exo7.dragon(2)
+    #print(v)
+    exo7.afficheDragon(10)
+    
+    
+    
     
 if __name__=="__main__":
     main()
